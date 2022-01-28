@@ -1,4 +1,4 @@
-name: Notify CPT Telegram
+name: Notify CPT
 on:
   pull_request:
     types: [opened, reopened]
@@ -13,6 +13,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} opened PR for review:
-
+            ${{ github.actor }} opened a PR for review:
             ${{ github.event.pull_request._links.html.href }}
+
+            **${{ github.event.base.head}}**
+            ${{ github.event.base.body}}
