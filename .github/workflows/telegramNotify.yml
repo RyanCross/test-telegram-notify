@@ -15,4 +15,4 @@ jobs:
           message: |
             ${{ github.actor }} opened PR for review:
 
-            ${{ toJSON(github.event.pull_request._links.html.href) }}
+            ${{ github.event.pull_request._links.html.href }}
