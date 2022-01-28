@@ -16,6 +16,6 @@ jobs:
             ${{ github.actor }} opened a PR for review:
             ${{ github.event.pull_request._links.html.href }}
 
-            ${{github.head_ref}}:
+            ${{ github.head_ref }}:
             ${{ github.event.pull_request.body }}
             
