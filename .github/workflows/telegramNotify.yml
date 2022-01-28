@@ -12,10 +12,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} opened a PR in:           
-            Repository: ${{ github.repository }}
-            ${{github.pull_request}}
+            ${{ github.actor }} opened PR for review:
+            ${{ github.event.title }} 
+            ${{ github.event.body }}
 
-            ${{github.event.pull_request}}
-            
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            Review: ${{ github.event.pull_request.html }}
