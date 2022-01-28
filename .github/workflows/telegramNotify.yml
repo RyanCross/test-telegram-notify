@@ -13,4 +13,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ github.actor }} opened PR for review:
-            ${{ toJSON(github.event.pull_request) }}
+            ${{ github.event.pull_request.html.href }}
